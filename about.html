@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - MYADSMOBI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* Why Choose Us section */
+        .why-choose-us {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+            color: var(--dark-color);
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .stats-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .stat-item {
+            flex: 1;
+            min-width: 200px;
+            max-width: 250px;
+            text-align: center;
+            padding: 30px 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .stat-item p {
+            font-size: 1.1rem;
+            color: var(--dark-color);
+        }
+
+        @media (max-width: 768px) {
+            .stats-grid {
+                gap: 20px;
+            }
+            
+            .stat-item {
+                min-width: 150px;
+                padding: 20px 15px;
+            }
+            
+            .stat-item h3 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-logo">
+                <img src="MYADSMOBI_LOGO.png" alt="MYADSMOBI Logo">
+            </a>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="partners.html">Partners</a></li>
+                <li><a href="about.html" class="active">About Us</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="contact.html" class="nav-cta">Contact</a></li>
+            </ul>
+            <!--div class="language-selector">
+                <select id="language-select">
+                    <option value="zh-CN">简体中文</option>
+                    <option value="zh-TW">繁體中文</option>
+                    <option value="en" selected>English</option>
+                    <option value="es">Español</option>
+                    <option value="ru">Русский</option>
+                </select>
+            </div-->
+        </div>
+    </nav>
+
+    <section class="about-hero">
+        <div class="container">
+            <h1>About MYADSMOBI</h1>
+            <p>Focused on mobile programmatic advertising, helping global clients achieve growth</p>
+        </div>
+    </section>
+
+    <section class="company-story">
+        <div class="container">
+            <h2>Our Story</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="year">2020</div>
+                    <div class="event">
+                        <h3>Company Founded</h3>
+                        <p>MYADSMOBI was founded in Hong Kong, beginning to provide mobile advertising solutions</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="year">2021</div>
+                    <div class="event">
+                        <h3>Business Expansion</h3>
+                        <p>Team expanded to 50 people, began serving clients in the Asia-Pacific region</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="year">2022</div>
+                    <div class="event">
+                        <h3>Technology Upgrade</h3>
+                        <p>Launched AI-driven programmatic advertising engine, significantly improved client ROI</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="year">2023</div>
+                    <div class="event">
+                        <h3>Global Development</h3>
+                        <p>Expanded business to European and American markets, serving clients worldwide</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="year">2024</div>
+                    <div class="event">
+                        <h3>Scale Growth</h3>
+                        <p>Team reached 150+ people, with over 1000 cooperative clients</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="year">2025</div>
+                    <div class="event">
+                        <h3>Future Outlook</h3>
+                        <p>Continuous innovation, leading the development of mobile advertising technology</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="company-intro">
+        <div class="container">
+            <h2>Company Introduction</h2>
+            <div class="intro-content">
+                <p class="intro-text">
+                    Founded in Hong Kong in 2020, MYADSMOBI has rapidly grown into a team of over 150 professionals with offices in seven cities around the world. Our mission is to connect China with global markets, helping clients create innovative business models and accelerate growth.
+                </p>
+                <p class="intro-text">
+                    At MYADSMOBI, we proudly offer cutting-edge mobile-first programmatic solutions for both branding and performance marketing needs. Our platform stands out with complete transparency, strong technical foundations, and comprehensive programmatic management tools. Leveraging advanced machine learning algorithms, MYADSMOBI focuses on delivering tangible results, addressing the complex challenges faced by marketers today. Join us in creating a more connected and technologically advanced future.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-choose-us">
+        <div class="container">
+            <h2 class="section-title">Why Choose MYADSMOBI</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>0+</h3>
+                    <p>Professional Team</p>
+                </div>
+                <div class="stat-item">
+                    <h3>5+</h3>
+                    <p>Years of Experience</p>
+                </div>
+                <div class="stat-item">
+                    <h3>0+</h3>
+                    <p>Success Stories</p>
+                </div>
+                <div class="stat-item">
+                    <h3>Global</h3>
+                    <p>Service Network</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-culture">
+        <div class="container">
+            <h2 data-aos="fade-up">Our Team and Culture</h2>
+            <p data-aos="fade-up" data-aos-delay="100">MYADSMOBI has over 150 professionals from diverse backgrounds. We value:</p>
+            <div class="values-grid">
+                <div class="value-item" data-aos="fade-up" data-aos-delay="150">
+                    <div class="value-icon">
+                        <img src="images/team/growth.svg" alt="Growth" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDgwIDgwIiBmaWxsPSJub25lIiBzdHJva2U9IiNFRDFDMjQiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48Y2lyY2xlIGN4PSI0MCIgY3k9IjQwIiByPSIyNSIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0yNSA1NUM0MCA0MCA0NSAyNSA0NSAyNSI+PC9wYXRoPjxwYXRoIGQ9Ik00NSAyNUg2MCIvPjxwYXRoIGQ9Ik01NcOXIE0yNSA0NSIvPjxwYXRoIGQ9Ik0zMCA0NUwzNSA0MCBMNDAgNDUgTDQ1IDQwIEw1MCA0NSBMNTUgNDAiLz48cGF0aCBkPSJNMzAgNTBMMzUgNDUgTDQwIDUwIEw0NSA0NSBMNTAgNTAgTDU1IDQ1Ii8+PC9zdmc+';this.onerror=null;">
+                    </div>
+                    <h3>Growth</h3>
+                    <p>Striving for transformation and self-growth in a rapidly changing industry</p>
+                </div>
+                <div class="value-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="value-icon">
+                        <img src="images/team/innovation.svg" alt="Innovation" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDgwIDgwIiBmaWxsPSJub25lIiBzdHJva2U9IiNFRDFDMjQiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNNDAgMjBWNDAiIC8+PHBhdGggZD0iTTQwIDQwTDUxLjIxIDUxLjIxIiAvPjxwYXRoIGQ9Ik00MCA0MEwyOC43OSA1MS4yMSIgLz48Y2lyY2xlIGN4PSI0MCIgY3k9IjQwIiByPSIyMCIgZmlsbD0ibm9uZSIgLz48Y2lyY2xlIGN4PSI0MCIgY3k9IjQwIiByPSI4IiBmaWxsPSJub25lIiAvPjxjaXJjbGUgY3g9IjQwIiBjeT0iMTUiIHI9IjMiIGZpbGw9IiNFRDFDMjQiIC8+PGNpcmNsZSBjeD0iNTYiIGN5PSI1NiIgcj0iMyIgZmlsbD0iI0VEMUM0IiAvPjxjaXJjbGUgY3g9IjI0IiBjeT0iNTYiIHI9IjMiIGZpbGw9IiNFRDFDMjQiIC8+PC9zdmc+';this.onerror=null;">
+                    </div>
+                    <h3>Innovation</h3>
+                    <p>Continuously exploring new technologies and methods to drive industry development</p>
+                </div>
+                <div class="value-item" data-aos="fade-up" data-aos-delay="250">
+                    <div class="value-icon">
+                        <img src="images/team/transparency.svg" alt="Transparency" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDgwIDgwIiBmaWxsPSJub25lIiBzdHJva2U9IiNFRDFDMjQiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cmVjdCB4PSIyMCIgeT0iMjAiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcng9IjIiIGZpbGw9Im5vbmUiIC8+PHBhdGggZD0iTTIwIDMwSDYwIiAvPjxwYXRoIGQ9Ik0zMCAyMFY2MCIgLz48cGF0aCBkPSJNNDAgMjBWNjAiIC8+PHBhdGggZD0iTTUwIDIwVjYwIiAvPjwvc3ZnPg==';this.onerror=null;">
+                    </div>
+                    <h3>Transparency</h3>
+                    <p>Building transparent and trustworthy partnerships with clients</p>
+                </div>
+                <div class="value-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="value-icon">
+                        <img src="images/team/data-driven.svg" alt="Data-Driven" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDgwIDgwIiBmaWxsPSJub25lIiBzdHJva2U9IiNFRDFDMjQiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMjAgNTBIMzAiIC8+PHBhdGggZD0iTTM1IDQwSDQ1IiAvPjxwYXRoIGQ9Ik01MCAzMEg2MCIgLz48Y2lyY2xlIGN4PSIzMCIgY3k9IjUwIiByPSI1IiBmaWxsPSJub25lIiAvPjxjaXJjbGUgY3g9IjQ1IiBjeT0iNDAiIHI9IjUiIGZpbGw9Im5vbmUiIC8+PGNpcmNsZSBjeD0iNjAiIGN5PSIzMCIgcj0iNSIgZmlsbD0ibm9uZSIgLz48cGF0aCBkPSJNMjAgNjBINjAiIC8+PHBhdGggZD0iTTIwIDIwSDYwIiAvPjxwYXRoIGQ9Ik0yMCAyMFY2MCIgLz48cGF0aCBkPSJNNjAgMjBWNjAiIC8+PC9zdmc+';this.onerror=null;">
+                    </div>
+                    <h3>Data-Driven</h3>
+                    <p>Making decisions based on data insights to ensure maximum effectiveness</p>
+                </div>
+                <div class="value-item" data-aos="fade-up" data-aos-delay="350">
+                    <div class="value-icon">
+                        <img src="images/team/customer-first.svg" alt="Customer First" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDgwIDgwIiBmaWxsPSJub25lIiBzdHJva2U9IiNFRDFDMjQiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48Y2lyY2xlIGN4PSIzMCIgY3k9IjMwIiByPSI4IiBmaWxsPSJub25lIiAvPjxwYXRoIGQ9Ik00OCAyOEM0OCAyOCA1OCAzOCA1OCAzOCIgLz48cGF0aCBkPSJNMTUgNTBDMTUgNDMuOTI0OCAyMS45MjQ4IDQwIDMwIDQwQzM4LjA3NTIgNDAgNDUgNDMuOTI0OCA0NSA1MCIgLz48cGF0aCBkPSJNNDAgNTBDNDAgNDYuMTM0IDQzLjEzNCA0NSA0OCA0NUM1Mi44NjYgNDUgNTYgNDYuMTM0IDU2IDUwIiAvPjxwYXRoIGQ9Ik00OCAyOEM0OCAzMi40MTgzIDQ0LjQxODMgMzYgNDAgMzZDMzUuNTgxNyAzNiAzMiAzMi40MTgzIDMyIDI4QzMyIDIzLjU4MTcgMzUuNTgxNyAyMCA0MCAyMEM0NC40MTgzIDIwIDQ4IDIzLjU4MTcgNDggMjhaIiAvPjwvc3ZnPg==';this.onerror=null;">
+                    </div>
+                    <h3>Customer First</h3>
+                    <p>Always prioritizing customer needs, providing customized solutions</p>
+                </div>
+                <div class="value-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="value-icon">
+                        <img src="images/team/responsibility.svg" alt="Shareholder Responsibility" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDgwIDgwIiBmaWxsPSJub25lIiBzdHJva2U9IiNFRDFDMjQiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48Y2lyY2xlIGN4PSI0MCIgY3k9IjI1IiByPSIxMCIgZmlsbD0ibm9uZSIgLz48cGF0aCBkPSJNNDAgMzVWNjAiIC8+PHBhdGggZD0iTTI3IDQ3SDUzIiAvPjxwYXRoIGQ9Ik0yNyA1M0g1MyIgLz48L3N2Zz4=';this.onerror=null;">
+                    </div>
+                    <h3>Shareholder Responsibility</h3>
+                    <p>All decisions are accountable to shareholders and employees</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-cta">
+        <div class="container">
+            <h2>Join us in starting a new era of digital advertising</h2>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn btn-primary">Contact Us</a>
+                <a href="careers.html" class="btn btn-outline">Join Our Team</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="MYADSMOBI_LOGO.png" alt="MYADSMOBI Logo" class="footer-logo">
+                    <p>Providing efficient mobile programmatic advertising solutions for global clients</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Information</h4>
+                    <p>Email: cooperation@MYADSMOBI.com</p>
+                    <p>Address: 21st Floor, 33 Hysan Avenue, Causeway Bay, Hong Kong</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Programmatic Advertising</a></li>
+                        <li><a href="services.html">Creative Automation</a></li>
+                        <li><a href="services.html">Data Analytics</a></li>
+                        <li><a href="services.html">Media Buying</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 MYADSMOBI All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+
+        // Initialize AOS animations
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Language selector
+        document.getElementById('language-select').addEventListener('change', function() {
+            const language = this.value;
+                window.location.href = "index.html";
+        });
+    </script>
+</body>
+</html>

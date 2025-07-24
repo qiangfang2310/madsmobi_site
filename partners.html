@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partners - MYADSMOBI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!--script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script-->
+    <style>
+        /* Partners page specific styles */
+        .partners-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+        
+        .partner-card {
+            flex: 0 0 calc(20% - 20px);
+            max-width: calc(20% - 20px);
+            height: 120px;
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .partner-card img {
+            max-width: 100%;
+            max-height: 60px;
+            object-fit: contain;
+            filter: grayscale(100%);
+            transition: all 0.3s ease;
+            z-index: 2;
+        }
+        
+        .partner-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        
+        .partner-card:hover img {
+            filter: grayscale(0%);
+        }
+        
+        .partner-card:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+        
+        .partner-card:hover:after {
+            transform: scaleX(1);
+        }
+        
+        .partners-category {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            padding-top: 30px;
+        }
+        
+        .partners-category h2 {
+            display: inline-block;
+            padding-bottom: 15px;
+            position: relative;
+            margin-bottom: 30px;
+            font-size: 2.2rem;
+            color: var(--dark-color);
+        }
+        
+        .partners-category h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--primary-color);
+        }
+        
+        .partners-category p {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
+        /* Media partners color gradient */
+        .media-partners .partner-card:after {
+            background: linear-gradient(90deg, #3b5998, #00acee);
+        }
+        
+        /* Client cases color gradient */
+        .client-cases .partner-card:after {
+            background: linear-gradient(90deg, var(--primary-color), #ff7676);
+        }
+        
+        /* Tech partners color gradient */
+        .tech-partners .partner-card:after {
+            background: linear-gradient(90deg, var(--secondary-color), #64b5f6);
+        }
+        
+        .partner-stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 60px 0;
+            flex-wrap: wrap;
+            background-color: #f9f9f9;
+            padding: 40px 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .partner-stat {
+            text-align: center;
+            flex: 1;
+            min-width: 200px;
+            margin: 15px;
+        }
+        
+        .partner-stat h3 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+        }
+        
+        .partner-stat p {
+            font-size: 1.2rem;
+            color: #555;
+            font-weight: 500;
+        }
+        
+        .partners-hero {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #2B87FF 0%, #6bb8ff 100%);
+            padding: 160px 0 80px;
+            text-align: center;
+            color: var(--light-color);
+        }
+        
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+        
+        .partners-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .partners-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .partners-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        @media (max-width: 992px) {
+            .partner-card {
+                flex: 0 0 calc(33.333% - 20px);
+                max-width: calc(33.333% - 20px);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .partner-card {
+                flex: 0 0 calc(50% - 20px);
+                max-width: calc(50% - 20px);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .partner-card {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-logo">
+                <img src="MYADSMOBI_LOGO.png" alt="MYADSMOBI Logo">
+            </a>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="partners.html" class="active">Partners</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+            </ul>
+            <!--div class="language-selector">
+                <select id="language-select">
+                    <option value="zh-CN">简体中文</option>
+                    <option value="zh-TW">繁體中文</option>
+                    <option value="en" selected>English</option>
+                    <option value="es">Español</option>
+                    <option value="ru">Русский</option>
+                </select>
+            </div-->
+        </div>
+    </nav>
+
+    <section class="partners-hero">
+        <div id="particles-js"></div>
+        <div class="container">
+            <h1 data-aos="fade-up">Our Partners</h1>
+            <p data-aos="fade-up" data-aos-delay="200">We have established long-term, stable partnerships with globally recognized brands</p>
+        </div>
+    </section>
+
+    <section class="partner-stats">
+        <div class="partner-stat" data-aos="fade-up" data-aos-delay="100">
+            <h3>50+</h3>
+            <p>Media Partners</p>
+        </div>
+        <div class="partner-stat" data-aos="fade-up" data-aos-delay="200">
+            <h3>1000+</h3>
+            <p>Client Cases</p>
+        </div>
+        <div class="partner-stat" data-aos="fade-up" data-aos-delay="300">
+            <h3>15+</h3>
+            <p>Technology Partners</p>
+        </div>
+        <div class="partner-stat" data-aos="fade-up" data-aos-delay="400">
+            <h3>80+</h3>
+            <p>Countries & Regions</p>
+        </div>
+    </section>
+
+    <section class="partners-showcase">
+        <div class="container">
+            <div class="partners-category media-partners">
+                <h2 data-aos="fade-up">Media Partners</h2>
+                <p data-aos="fade-up" data-aos-delay="100">We establish stable relationships with premium global media platforms to ensure efficient and widespread ad delivery</p>
+                <div class="partners-grid">
+                    <div class="partner-card" data-aos="fade-up" data-aos-delay="100">
+                        <img src="images/partners/meta-3.svg" alt="Meta">
+                    </div>
+                    <div class="partner-card" data-aos="fade-up" data-aos-delay="150">
+                        <img src="images/partners/google-1-1.svg" alt="Google">
+                    </div>
+                    <div class="partner-card" data-aos="fade-up" data-aos-delay="200">
+                        <img src="images/partners/applovin-seeklogo.svg" alt="Applovin">
+                    </div>
+                    <div class="partner-card" data-aos="fade-up" data-aos-delay="250">
+                        <img src="images/partners/twitter-logo-2.svg" alt="Twitter">
+                    </div>
+                    <div class="partner-card" data-aos="fade-up" data-aos-delay="300">
+                        <img src="images/partners/pinterest-2-1.svg" alt="Pinterest">
+                    </div>
+                    <div class="partner-card" data-aos="fade-up" data-aos-delay="100">
+                        <img src="images/partners/unity-technologies-logo.svg" alt="Unity">
+                    </div>
+                    <div class="partner-card" data-aos="fade-up" data-aos-delay="150">
+                        <img src="images/partners/huawei-honor-logo.svg" alt="Honor">
+                    </div>
+                    <div class="partner-card" data-aos="fade-up" data-aos-delay="200">
+                        <img src="images/partners/xiaomi-1.svg" alt="Xiaomi">
+                    </div>
+                    <div class="partner-card" data-aos="fade-up" data-aos-delay="250">
+                        <img src="images/clients/line.svg" alt="LINE">
+                    </div>
+                </div>
+            </div>
+
+            <div class="partners-category client-cases">
+                <h2 data-aos="fade-up">Client Cases</h2>
+                <p data-aos="fade-up" data-aos-delay="100">Clients from around the world choose to work with MYADSMOBI to achieve their marketing goals</p>
+                <div class="partners-grid">
+                    <div class="partner-card" data-aos="fade-up" data-aos-delay="100">
+                        <img src="images/clients/shein-1.svg" alt="SHEIN">
+                    </div>
+                    <div class="partner-card" data-aos="fade-up" data-aos-delay="150">
+                        <img src="images/clients/shopee-logo.svg" alt="SHOPEE">
+                    </div>
+                    <div class="partner-card" data-aos="fade-up" data-aos-delay="200">
+                        <img src="images/clients/logo-amazon.svg" alt="Amazon">
+                    </div>
+                    <div class="partner-card" data-aos="fade-up" data-aos-delay="250">
+                        <img src="images/clients/lazada-1.svg" alt="Lazada">
+                    </div>
+                    <div class="partner-card" data-aos="fade-up" data-aos-delay="300">
+                        <img src="images/clients/deliveroo-1.svg" alt="Deliveroo">
+                    </div>
+                    <div class="partner-card" data-aos="fade-up" data-aos-delay="100">
+                        <img src="images/clients/bilibili.svg" alt="Bilibili">
+                    </div>
+                    <div class="partner-card" data-aos="fade-up" data-aos-delay="150">
+                        <img src="images/clients/snapchat-1.svg" alt="Snapchat">
+                    </div>
+                    <div class="partner-card" data-aos="fade-up" data-aos-delay="200">
+                        <img src="images/clients/whatsapp.svg" alt="WhatsApp">
+                    </div>
+                    <div class="partner-card" data-aos="fade-up" data-aos-delay="250">
+                        <img src="images/clients/okex-3.svg" alt="OKEx">
+                    </div>
+                    <div class="partner-card" data-aos="fade-up" data-aos-delay="300">
+                        <img src="images/clients/binance.svg" alt="Binance">
+                    </div>
+                </div>
+            </div>
+
+            <div class="partners-category tech-partners">
+                <h2 data-aos="fade-up">Technology Partners</h2>
+                <p data-aos="fade-up" data-aos-delay="100">Collaboration with industry-leading technology providers ensures we deliver cutting-edge advertising solutions</p>
+                <div class="partners-grid">
+                    <div class="partner-card" data-aos="fade-up" data-aos-delay="100">
+                        <img src="images/tech-partners/amazon-web-services-2.svg" alt="Amazon Web Services">
+                    </div>
+                    <div class="partner-card" data-aos="fade-up" data-aos-delay="150">
+                        <img src="images/tech-partners/openai-wordmark.svg" alt="OpenAI">
+                    </div>
+                    <div class="partner-card" data-aos="fade-up" data-aos-delay="200">
+                        <img src="images/tech-partners/Anthropic_wordmark_light.svg" alt="Anthropic">
+                    </div>
+                    <div class="partner-card" data-aos="fade-up" data-aos-delay="250">
+                        <img src="images/tech-partners/huawei-2.svg" alt="HUAWEI">
+                    </div>
+                    <div class="partner-card" data-aos="fade-up" data-aos-delay="300">
+                        <img src="images/tech-partners/oracle-6.svg" alt="Oracle">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2 data-aos="fade-up">Become Our Partner</h2>
+            <p data-aos="fade-up" data-aos-delay="100">Join MYADSMOBI's partner ecosystem to explore the limitless possibilities of mobile advertising together</p>
+            <a href="contact.html" class="btn btn-large btn-primary" data-aos="fade-up" data-aos-delay="200">Contact Us</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="MYADSMOBI_LOGO.png" alt="MYADSMOBI Logo" class="footer-logo">
+                    <p>Providing effective mobile programmatic advertising solutions for global clients</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <p>Email: cooperation@MYADSMOBI.com</p>
+                    <p>Address: 21st Floor, 33 Hysan Avenue, Causeway Bay, Hong Kong</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Programmatic Advertising</a></li>
+                        <li><a href="services.html">Creative Automation</a></li>
+                        <li><a href="services.html">Data Analytics</a></li>
+                        <li><a href="services.html">Media Buying</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 MYADSMOBI All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+
+        // Initialize AOS animations
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Initialize particles.js
+        document.addEventListener('DOMContentLoaded', function() {
+            particlesJS('particles-js', {
+                "particles": {
+                    "number": {
+                        "value": 80,
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
+                        }
+                    },
+                    "color": {
+                        "value": "#ffffff"
+                    },
+                    "shape": {
+                        "type": "circle",
+                        "stroke": {
+                            "width": 0,
+                            "color": "#000000"
+                        },
+                        "polygon": {
+                            "nb_sides": 5
+                        }
+                    },
+                    "opacity": {
+                        "value": 0.5,
+                        "random": false,
+                        "anim": {
+                            "enable": false,
+                            "speed": 1,
+                            "opacity_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "size": {
+                        "value": 3,
+                        "random": true,
+                        "anim": {
+                            "enable": false,
+                            "speed": 40,
+                            "size_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 150,
+                        "color": "#ffffff",
+                        "opacity": 0.4,
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 6,
+                        "direction": "none",
+                        "random": false,
+                        "straight": false,
+                        "out_mode": "out",
+                        "bounce": false,
+                        "attract": {
+                            "enable": false,
+                            "rotateX": 600,
+                            "rotateY": 1200
+                        }
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "grab"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        },
+                        "resize": true
+                    },
+                    "modes": {
+                        "grab": {
+                            "distance": 140,
+                            "line_linked": {
+                                "opacity": 1
+                            }
+                        },
+                        "bubble": {
+                            "distance": 400,
+                            "size": 40,
+                            "duration": 2,
+                            "opacity": 8,
+                            "speed": 3
+                        },
+                        "repulse": {
+                            "distance": 200,
+                            "duration": 0.4
+                        },
+                        "push": {
+                            "particles_nb": 4
+                        },
+                        "remove": {
+                            "particles_nb": 2
+                        }
+                    }
+                },
+                "retina_detect": true
+            });
+        });
+
+        // Language selector
+        document.getElementById('language-select').addEventListener('change', function() {
+            const language = this.value;
+            window.location.href = "index.html";
+        });
+    </script>
+</body>
+</html>
